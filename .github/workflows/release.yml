@@ -70,10 +70,14 @@ jobs:
         if: matrix.platform == 'macos-latest'
         run: brew install cmake
 
-      - name: Windows deps (LLVM for bindgen)
+      - name: Windows deps (LIBCLANG_PATH for bindgen)
         if: matrix.platform == 'windows-latest'
-        run: choco install llvm -y --version=18.1.8
         shell: pwsh
+        run: |
+          if (-not (Test-Path "C:\Program Files\LLVM\bin\libclang.dll")) {
+            choco install llvm -y
+          }
+          Add-Content $env:GITHUB_ENV "LIBCLANG_PATH=C:\Program Files\LLVM\bin"
 
       - name: Install npm deps
         run: npm ci
