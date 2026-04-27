@@ -117,7 +117,7 @@ export function SettingsAboutSection({
         <div className="settings-label">{tx("App Updates")}</div>
         <SettingsToggleRow
           title={tx("Automatically check for app updates")}
-          subtitle={tx("When enabled, CodexMonitor checks for new app versions on launch.")}
+          subtitle={tx("When enabled, codop checks for new app versions on launch.")}
         >
           <SettingsToggleSwitch
             pressed={appSettings.automaticAppUpdateChecksEnabled}

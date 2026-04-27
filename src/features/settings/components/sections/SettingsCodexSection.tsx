@@ -232,7 +232,7 @@ export function SettingsCodexSection({
   return (
     <SettingsSection
       title={tx("Codex")}
-      subtitle={tx("Configure the Codex CLI used by CodexMonitor and validate the install.")}
+      subtitle={tx("Configure the Codex CLI used by codop and validate the install.")}
     >
       <div className="settings-field">
         <label className="settings-field-label" htmlFor="codex-path">

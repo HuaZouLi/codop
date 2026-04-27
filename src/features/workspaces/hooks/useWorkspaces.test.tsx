@@ -366,7 +366,7 @@ describe("useWorkspaces.addWorkspacesFromPaths", () => {
       {
         ...workspaceOne,
         id: "existing-win",
-        path: "I:\\gpt-projects\\CodexMonitor",
+        path: "I:\\gpt-projects\\codop",
       },
     ]);
     isWorkspacePathDirMock.mockResolvedValue(true);
@@ -380,16 +380,16 @@ describe("useWorkspaces.addWorkspacesFromPaths", () => {
     let addResult: Awaited<ReturnType<typeof result.current.addWorkspacesFromPaths>>;
     await act(async () => {
       addResult = await result.current.addWorkspacesFromPaths([
-        "\\\\?\\I:\\gpt-projects\\CodexMonitor",
+        "\\\\?\\I:\\gpt-projects\\codop",
       ]);
     });
 
     expect(isWorkspacePathDirMock).toHaveBeenCalledWith(
-      "\\\\?\\I:\\gpt-projects\\CodexMonitor",
+      "\\\\?\\I:\\gpt-projects\\codop",
     );
     expect(addWorkspaceMock).not.toHaveBeenCalled();
     expect(addResult!.added).toHaveLength(0);
-    expect(addResult!.skippedExisting).toEqual(["\\\\?\\I:\\gpt-projects\\CodexMonitor"]);
+    expect(addResult!.skippedExisting).toEqual(["\\\\?\\I:\\gpt-projects\\codop"]);
     expect(addResult!.skippedInvalid).toHaveLength(0);
     expect(addResult!.failures).toHaveLength(0);
   });
@@ -403,7 +403,7 @@ describe("useWorkspaces.addWorkspacesFromPaths", () => {
       {
         ...workspaceOne,
         id: "existing-unc",
-        path: "\\\\SERVER\\Share\\CodexMonitor",
+        path: "\\\\SERVER\\Share\\codop",
       },
     ]);
     isWorkspacePathDirMock.mockResolvedValue(true);
@@ -417,17 +417,17 @@ describe("useWorkspaces.addWorkspacesFromPaths", () => {
     let addResult: Awaited<ReturnType<typeof result.current.addWorkspacesFromPaths>>;
     await act(async () => {
       addResult = await result.current.addWorkspacesFromPaths([
-        "\\\\?\\UNC\\SERVER\\Share\\CodexMonitor",
+        "\\\\?\\UNC\\SERVER\\Share\\codop",
       ]);
     });
 
     expect(isWorkspacePathDirMock).toHaveBeenCalledWith(
-      "\\\\?\\UNC\\SERVER\\Share\\CodexMonitor",
+      "\\\\?\\UNC\\SERVER\\Share\\codop",
     );
     expect(addWorkspaceMock).not.toHaveBeenCalled();
     expect(addResult!.added).toHaveLength(0);
     expect(addResult!.skippedExisting).toEqual([
-      "\\\\?\\UNC\\SERVER\\Share\\CodexMonitor",
+      "\\\\?\\UNC\\SERVER\\Share\\codop",
     ]);
     expect(addResult!.skippedInvalid).toHaveLength(0);
     expect(addResult!.failures).toHaveLength(0);

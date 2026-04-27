@@ -52,7 +52,7 @@ export function MobileServerSetupWizard({
         </h2>
         <p className="mobile-setup-wizard-subtitle">
           {tx(
-            "Complete this setup before using the app. Use the same connection details configured on your desktop CodexMonitor server settings.",
+            "Complete this setup before using the app. Use the same connection details configured on your desktop codop server settings.",
           )}
         </p>
       </div>

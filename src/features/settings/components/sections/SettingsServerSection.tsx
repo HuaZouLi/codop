@@ -192,7 +192,7 @@ export function SettingsServerSection({
       subtitle={
         isMobileSimplified
           ? tx("Configure TCP host/token from your desktop setup, then run a connection test.")
-          : tx("Configure how CodexMonitor exposes TCP backend access for mobile and remote clients. Desktop usage remains local unless you explicitly connect through remote mode.")
+          : tx("Configure how codop exposes TCP backend access for mobile and remote clients. Desktop usage remains local unless you explicitly connect through remote mode.")
       }
     >
 
@@ -344,7 +344,7 @@ export function SettingsServerSection({
         {!isMobileSimplified && (
           <SettingsToggleRow
             title={tx("Keep daemon running after app closes")}
-            subtitle={tx("If disabled, CodexMonitor stops managed TCP daemon processes before exit.")}
+            subtitle={tx("If disabled, codop stops managed TCP daemon processes before exit.")}
           >
             <SettingsToggleSwitch
               pressed={appSettings.keepDaemonRunningAfterAppClose}
@@ -398,7 +398,7 @@ export function SettingsServerSection({
           {remoteHostError && <div className="settings-help settings-help-error">{remoteHostError}</div>}
           <div className="settings-help">
             {isMobileSimplified
-              ? tx("Use the Tailscale host from your desktop CodexMonitor app (Server section), for example `macbook.your-tailnet.ts.net:4732`.")
+              ? tx("Use the Tailscale host from your desktop codop app (Server section), for example `macbook.your-tailnet.ts.net:4732`.")
               : tx("This host/token is used by mobile clients and desktop remote-mode testing.")}
           </div>
         </div>
@@ -554,8 +554,8 @@ export function SettingsServerSection({
 
       <div className="settings-help">
         {isMobileSimplified
-          ? tx("Use your own infrastructure only. On iOS, get the Tailscale hostname and token from your desktop CodexMonitor setup.")
-          : tx("Mobile access should stay scoped to your own infrastructure (tailnet). CodexMonitor does not provide hosted backend services.")}
+          ? tx("Use your own infrastructure only. On iOS, get the Tailscale hostname and token from your desktop codop setup.")
+          : tx("Mobile access should stay scoped to your own infrastructure (tailnet). codop does not provide hosted backend services.")}
       </div>
       {addRemoteOpen && (
         <ModalShell
