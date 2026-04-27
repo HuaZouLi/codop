@@ -95,7 +95,7 @@ jobs:
             **Requirement**: install the OpenAI Codex CLI separately (`npm i -g @openai/codex` or `brew install openai/tap/codex`).
 
             Built from commit ${{ github.sha }}.
-          releaseDraft: true
+          releaseDraft: false
           prerelease: false
           tauriScript: npm run tauri --
           args: ${{ matrix.args }}
